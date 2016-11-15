@@ -1,5 +1,6 @@
 {
 	"name"        : "rarst/wpdatetime",
+	"description": "Extension of PHP’s DateTime and DateTimeZone classes for WordPress context.",
 	"license"     : "MIT",
 	"authors"     : [
 		{
