@@ -1,0 +1,24 @@
+{
+	"name"        : "rarst/wpdatetime",
+	"license"     : "MIT",
+	"authors"     : [
+		{
+			"name"    : "Andrey Savchenko",
+			"email"   : "contact@rarst.net",
+			"homepage": "https://Rarst.net"
+		}
+	],
+	"require-dev" : {
+		"brain/monkey": "^1.4.1"
+	},
+	"autoload"    : {
+		"psr-4": {
+			"Rarst\\WordPress\\DateTime\\": "php/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Rarst\\WordPress\\DateTime\\": "tests/"
+		}
+	}
+}
