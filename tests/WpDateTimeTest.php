@@ -6,7 +6,7 @@ use Brain\Monkey\Functions;
 use Brain\Monkey\WP\Filters;
 
 /**
- * @coversDefaultClass WpDateTimeTrait
+ * @coversDefaultClass Rarst\WordPress\DateTime\WpDateTimeTrait
  */
 class WpDateTimeTest extends WpDateTimeTestCase {
 

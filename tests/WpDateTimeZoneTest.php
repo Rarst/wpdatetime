@@ -5,7 +5,7 @@ namespace Rarst\WordPress\DateTime;
 use Brain\Monkey\Functions;
 
 /**
- * @coversDefaultClass WpDateTimeZone
+ * @coversDefaultClass Rarst\WordPress\DateTime\WpDateTimeZone
  */
 class WpDateTimeZoneTest extends WpDateTimeTestCase {
 

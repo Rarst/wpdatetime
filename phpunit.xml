@@ -1,7 +1,12 @@
 <phpunit bootstrap="vendor/autoload.php">
-  <testsuites>
-    <testsuite name="WpDateTime">
-      <directory>tests</directory>
-    </testsuite>
-  </testsuites>
+	<testsuites>
+		<testsuite name="WpDateTime">
+			<directory>tests</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist processUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">php</directory>
+		</whitelist>
+	</filter>
 </phpunit>
