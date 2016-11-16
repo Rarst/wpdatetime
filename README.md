@@ -1,5 +1,9 @@
 # WpDateTime — DateTime extension for WordPress
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Rarst/wpdatetime/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Rarst/wpdatetime/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/Rarst/wpdatetime/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Rarst/wpdatetime/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/Rarst/wpdatetime/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Rarst/wpdatetime/?branch=master)
+
 WpDateTime is an extension of PHP’s [`DateTime`](http://php.net/manual/en/class.datetime.php) and [`DateTimeZone`](http://php.net/manual/en/class.datetimezone.php) classes for WordPress context.
 
 It makes it easy to instance time objects from WordPress posts and produce localized output with correct format and time zone handling.
