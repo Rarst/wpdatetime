@@ -44,6 +44,10 @@ class WpDateTimeTest extends WpDateTimeTestCase {
 
 		$this->assertEquals( 'Europe/Kiev', $wp_datetime->getTimezone()->getName() );
 		$this->assertEquals( $datetime->format( DATE_W3C ), $wp_datetime->format( DATE_W3C ) );
+
+		$post = (object) [ 'post_date_gmt' => 'invalid date' ];
+
+		$this->assertFalse( WpDateTime::createFromPost( $post ) );
 	}
 
 	/**
