@@ -32,12 +32,7 @@ trait WpDateTimeTrait {
 		$post_date = get_post_field( "post_{$field}_gmt", $post );
 
 		$wp_timezone     = WpDateTimeZone::getWpTimezone();
-		$create_timezone = null;
-
-		// Something switched default timezone.
-		if ( 'UTC' !== date_default_timezone_get() ) {
-			$create_timezone = new \DateTimeZone( 'UTC' );
-		}
+		$create_timezone = new \DateTimeZone( 'UTC' );
 
 		// Missing GMT data, fall back to usual field and assume WP timezone.
 		if ( empty( $post_date ) ) {
