@@ -71,6 +71,8 @@ class WpDateTimeTest extends WpDateTimeTestCase {
 
 	/**
 	 * @covers ::formatI18n()
+	 * @covers ::formatDate()
+	 * @covers ::formatTime()
 	 */
 	public function testFormatI18n() {
 
@@ -88,9 +90,19 @@ class WpDateTimeTest extends WpDateTimeTestCase {
 			return $wp_datetime->setTimestamp( $unix_timestamp )->format( $format );
 		} );
 
-		Filters\expectAdded( 'pre_option_timezone_string' )->twice();
+		Filters\expectAdded( 'pre_option_timezone_string' )->times( 4 );
+
 		$this->assertEquals( $wp_datetime->format( DATE_W3C ), $wp_datetime->formatI18n( 'c' ) );
 		$this->assertEquals( $wp_datetime->format( DATE_RFC2822 ), $wp_datetime->formatI18n( 'r' ) );
+
+		$date_format = 'F j, Y';
+		Functions\when( 'get_option' )->justReturn( $date_format );
+		$this->assertEquals( $wp_datetime->format( $date_format ), $wp_datetime->formatDate() );
+
+		$time_format = 'g:i a';
+		Functions\when( 'get_option' )->justReturn( $time_format );
+		$this->assertEquals( $wp_datetime->format( $time_format ), $wp_datetime->formatTime() );
+
 		$this->assertFalse( has_filter( 'pre_option_timezone_string', 'DateTimeZone->getName()' ) );
 	}
 }

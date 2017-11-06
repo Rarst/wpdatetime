@@ -26,8 +26,10 @@ You can use shared `WpDateTimeInterface` to hint for both.
 
 #### Methods
 
-- `WpDateTime::createFromPost()` static method creates object instance from WordPress post. Time zone defaults to current WordPress setting.
-- `WpDateTime->formatI18n()` method outputs formatted and localized date in object’s time zone.
+- `WpDateTime::createFromPost()` creates object instance from WP post. Time zone defaults to current WP setting.
+- `WpDateTime->formatI18n()` outputs formatted and localized date in object’s time zone.
+- `WpDateTime->formatDate()` outputs in current WP date format.
+- `WpDateTime->formatTime()` outputs in current WP time format.
 
 #### Example
 
@@ -39,7 +41,7 @@ $date = WpDateTime::createFromPost( get_post() );
 echo sprintf(
 	'Posted on: <time datetime="%s">%s</time>',
 	$date->format( DATE_RFC3339 ),
-	$date->formatI18n( get_option( 'date_format' ) )
+	$date->formatDate()
 );
 // Posted on: <time datetime="2014-11-07T15:36:31+02:00">Ноябрь 7, 2014</time>
 ```

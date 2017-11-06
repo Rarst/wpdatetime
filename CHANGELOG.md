@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## Added
+- Helper `formatDate()` and `formatTime()` methods for quick output in current WP configuration formats. 
+
 ## Changed
 - Updated tests and Brain Monkey to version 2.1.
 

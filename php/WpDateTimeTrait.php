@@ -96,4 +96,24 @@ trait WpDateTimeTrait {
 
 		return $date_i18n;
 	}
+
+	/**
+	 * Formats in current WordPress date format and locale.
+	 *
+	 * @return string
+	 */
+	public function formatDate() {
+
+		return $this->formatI18n( get_option( 'date_format' ) );
+	}
+
+	/**
+	 * Formats in current WordPress time format and locale.
+	 *
+	 * @return string
+	 */
+	public function formatTime() {
+
+		return $this->formatI18n( get_option( 'time_format' ) );
+	}
 }
