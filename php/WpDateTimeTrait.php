@@ -21,7 +21,7 @@ trait WpDateTimeTrait {
 	 * @param int|object|\WP_Post $post  WordPress Post to create instance for.
 	 * @param string              $field Post field to use `date` or `modified`.
 	 *
-	 * @return boolean|self Object instance or `false` on failure.
+	 * @return boolean|static Object instance or `false` on failure.
 	 */
 	public static function createFromPost( $post, $field = 'date' ) {
 
@@ -45,7 +45,7 @@ trait WpDateTimeTrait {
 		}
 
 		try {
-			$wp_time = new self( $post_date, $create_timezone );
+			$wp_time = new static( $post_date, $create_timezone );
 			$wp_time->setTimezone( $wp_timezone );
 
 			return $wp_time;
