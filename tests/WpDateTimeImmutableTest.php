@@ -2,6 +2,9 @@
 
 namespace Rarst\WordPress\DateTime;
 
+/**
+ * @coversDefaultClass Rarst\WordPress\DateTime\WpDateTimeImmutable
+ */
 class WpDateTimeImmutableTest extends WpDateTimeTestCase {
 
 	public function testImmutable() {
@@ -14,5 +17,17 @@ class WpDateTimeImmutableTest extends WpDateTimeTestCase {
 
 		$wp_datetime_immutable = new WpDateTimeImmutable( 'now', $utc );
 		$this->assertNotSame( $wp_datetime_immutable, $wp_datetime_immutable->setTimezone( $kiev ) );
+	}
+
+	/**
+	 * @covers ::createFromMutable()
+	 */
+	public function testCreateFromMutable() {
+
+		$datetime = new \DateTime( 'now' );
+
+		$wp_datetime_immutable = WpDateTimeImmutable::createFromMutable( $datetime );
+
+		$this->assertInstanceOf( WpDateTimeImmutable::class, $wp_datetime_immutable );
 	}
 }

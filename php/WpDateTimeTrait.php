@@ -55,6 +55,27 @@ trait WpDateTimeTrait {
 	}
 
 	/**
+	 * Overrides upstream method to correct returned instance type to the inheriting one.
+	 *
+	 * {@inheritdoc}
+	 *
+	 * @return bool|static
+	 */
+	public static function createFromFormat( $format, $time, $timezone = null ) {
+
+		/** @var \DateTimeInterface $created */
+		$created = parent::createFromFormat( $format, $time, $timezone );
+
+		if ( false === $created ) {
+			return false;
+		}
+
+		$wp_date_time = new static( '@' . $created->getTimestamp() );
+
+		return $wp_date_time->setTimezone( $created->getTimezone() );
+	}
+
+	/**
 	 * Formats date in current WordPress locale, but uses object’s time zone.
 	 *
 	 * @param string $format date()–compatible format to use.

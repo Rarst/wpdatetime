@@ -51,6 +51,25 @@ class WpDateTimeTest extends WpDateTimeTestCase {
 	}
 
 	/**
+	 * @covers ::createFromFormat()
+	 */
+	public function testCreateFromFormat() {
+
+		$wp_date_time = WpDateTime::createFromFormat( WpDateTime::MYSQL, 'invalid date' );
+
+		$this->assertFalse( $wp_date_time );
+
+		$mysql_date_string = '2017-11-06 16:49:00';
+		$wp_date_time      = WpDateTime::createFromFormat( WpDateTime::MYSQL, $mysql_date_string );
+
+		$this->assertInstanceOf( WpDateTime::class, $wp_date_time );
+
+		$wp_date_time_immutable = WpDateTimeImmutable::createFromFormat( WpDateTime::MYSQL, $mysql_date_string );
+
+		$this->assertInstanceOf( WpDateTimeImmutable::class, $wp_date_time_immutable );
+	}
+
+	/**
 	 * @covers ::formatI18n()
 	 */
 	public function testFormatI18n() {
