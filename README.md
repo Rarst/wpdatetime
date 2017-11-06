@@ -3,6 +3,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Rarst/wpdatetime/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Rarst/wpdatetime/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/Rarst/wpdatetime/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Rarst/wpdatetime/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/Rarst/wpdatetime/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Rarst/wpdatetime/?branch=master)
+[![Total Downloads](https://poser.pugx.org/rarst/wpdatetime/downloads)](https://packagist.org/packages/rarst/wpdatetime)
 
 WpDateTime is an extension of PHP’s [`DateTime`](http://php.net/manual/en/class.datetime.php) and [`DateTimeZone`](http://php.net/manual/en/class.datetimezone.php) classes for WordPress context.
 
