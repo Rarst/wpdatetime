@@ -16,7 +16,7 @@
 		}
 	],
 	"require-dev" : {
-		"brain/monkey": "^1.4.1"
+		"brain/monkey": "^2.1"
 	},
 	"autoload"    : {
 		"psr-4": {

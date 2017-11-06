@@ -14,7 +14,7 @@ class WpDateTimeZoneTest extends WpDateTimeTestCase {
 	 */
 	public function testGetWpTimezoneString() {
 
-		Functions::expect( 'get_option' )->with( 'timezone_string' )->andReturn( 'Europe/Kiev' );
+		Functions\expect( 'get_option' )->with( 'timezone_string' )->andReturn( 'Europe/Kiev' );
 
 		$this->assertEquals( 'Europe/Kiev', WpDateTimeZone::getWpTimezone()->getName() );
 	}
@@ -24,8 +24,8 @@ class WpDateTimeZoneTest extends WpDateTimeTestCase {
 	 */
 	public function testGetWpTimezoneOffset() {
 
-		Functions::expect( 'get_option' )->with( 'timezone_string' )->andReturn( false );
-		Functions::expect( 'get_option' )->with( 'gmt_offset' )->andReturn( 2 );
+		Functions\expect( 'get_option' )->with( 'timezone_string' )->andReturn( false );
+		Functions\expect( 'get_option' )->with( 'gmt_offset' )->andReturn( 2 );
 
 		$this->assertEquals( '+02:00', WpDateTimeZone::getWpTimezone()->getName() );
 	}
