@@ -64,7 +64,9 @@ trait WpDateTimeTrait {
 	public static function createFromFormat( $format, $time, $timezone = null ) {
 
 		/** @var \DateTimeInterface $created */
-		$created = parent::createFromFormat( $format, $time, $timezone );
+		$created = empty( $timezone ) ?
+			parent::createFromFormat( $format, $time ) :
+			parent::createFromFormat( $format, $time, $timezone );
 
 		if ( false === $created ) {
 			return false;
