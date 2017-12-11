@@ -39,7 +39,7 @@ use Rarst\WordPress\DateTime\WpDateTime;
 
 $date = WpDateTime::createFromPost( get_post() );
 
-echo sprintf(
+printf(
 	'Posted on: <time datetime="%s">%s</time>',
 	$date->format( DATE_RFC3339 ),
 	$date->formatDate()
@@ -60,8 +60,13 @@ Class extends `DateTimeZone`.
 ```php
 use Rarst\WordPress\DateTime\WpDateTimeZone;
 
+// Timezone string.
 var_dump( WpDateTimeZone::getWpTimezone()->getName() );
 // string(11) "Europe/Kiev"
+
+// GMT offset.
+var_dump( WpDateTimeZone::getWpTimezone()->getName() );
+// string(6) "+02:00"
 ```
 
 ## Tests
