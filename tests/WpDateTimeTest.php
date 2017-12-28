@@ -90,10 +90,15 @@ class WpDateTimeTest extends WpDateTimeTestCase {
 			return $wp_datetime->setTimestamp( $unix_timestamp )->format( $format );
 		} );
 
-		Filters\expectAdded( 'pre_option_timezone_string' )->times( 4 );
+		Filters\expectAdded( 'pre_option_timezone_string' )->times( 5 );
 
 		$this->assertEquals( $wp_datetime->format( DATE_W3C ), $wp_datetime->formatI18n( 'c' ) );
 		$this->assertEquals( $wp_datetime->format( DATE_RFC2822 ), $wp_datetime->formatI18n( 'r' ) );
+
+		$this->assertEquals(
+			$wp_datetime->setTimezone( new \DateTimeZone( '+02:00' ) )->format( DATE_W3C ),
+			$wp_datetime->setTimezone( new \DateTimeZone( '+02:00' ) )->formatI18n( DATE_W3C )
+		);
 
 		$date_format = 'F j, Y';
 		Functions\when( 'get_option' )->justReturn( $date_format );
