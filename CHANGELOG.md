@@ -8,18 +8,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 0.2.1 - 2017-12-28
 
-## Fixed
+### Fixed
 - Math for converting negative GMT offset values. 
 
 ## 0.2 - 2017-11-06
 
-## Added
+### Added
 - Helper `formatDate()` and `formatTime()` methods for quick output in current WP configuration formats. 
 
-## Changed
+### Changed
 - Updated tests and Brain Monkey to version 2.1.
 
-## Fixed
+### Fixed
 - Overrode upstream methods to return instances of inherited type.
 - Instance `static` (not `self`) for correct behavior on subclassing.
 
