@@ -21,7 +21,7 @@ class WpDateTimeTest extends WpDateTimeTestCase {
 
 		Functions\expect( 'get_option' )->with( 'timezone_string' )->andReturn( 'Europe/Kiev' );
 
-		$datetime   = new \DateTimeImmutable( time(), new \DateTimeZone( 'Europe/Kiev' ) );
+		$datetime   = ( new \DateTimeImmutable( '@' . time() ) )->setTimezone( new \DateTimeZone( 'Europe/Kiev' ) );
 		$kiev_mysql = $datetime->format( WpDateTime::MYSQL );
 		$utc_mysql  = $datetime->setTimezone( new \DateTimeZone( 'UTC' ) )->format( WpDateTime::MYSQL );
 
