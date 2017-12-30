@@ -1,10 +1,10 @@
 <?php
 namespace Rarst\WordPress\DateTime;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Brain\Monkey;
 
-class WpDateTimeTestCase extends PHPUnit_Framework_TestCase {
+class WpDateTimeTestCase extends TestCase {
 
 	protected function setUp() {
 		parent::setUp();
