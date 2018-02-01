@@ -46,9 +46,8 @@ trait WpDateTimeTrait {
 
 		try {
 			$wp_time = new static( $post_date, $create_timezone );
-			$wp_time->setTimezone( $wp_timezone );
 
-			return $wp_time;
+			return $wp_time->setTimezone( $wp_timezone );
 		} catch ( \Exception $e ) {
 			return false;
 		}

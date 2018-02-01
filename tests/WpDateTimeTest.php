@@ -26,26 +26,27 @@ class WpDateTimeTest extends WpDateTimeTestCase {
 		$utc_mysql  = $datetime->setTimezone( new \DateTimeZone( 'UTC' ) )->format( WpDateTime::MYSQL );
 
 		$post        = (object) [ 'post_date' => $kiev_mysql ];
-		$wp_datetime = WpDateTime::createFromPost( $post );
+		$wp_datetime = WpDateTimeImmutable::createFromPost( $post );
 
 		$this->assertEquals( 'Europe/Kiev', $wp_datetime->getTimezone()->getName() );
 		$this->assertEquals( $datetime, $wp_datetime );
 
 		$post        = (object) [ 'post_date_gmt' => $utc_mysql ];
-		$wp_datetime = WpDateTime::createFromPost( $post );
+		$wp_datetime = WpDateTimeImmutable::createFromPost( $post );
 
+		$this->assertEquals( 'Europe/Kiev', $wp_datetime->getTimezone()->getName() );
 		$this->assertEquals( $datetime, $wp_datetime );
 
 		$post        = (object) [ 'post_modified_gmt' => $utc_mysql ];
-		$wp_datetime = WpDateTime::createFromPost( $post, 'modified' );
+		$wp_datetime = WpDateTimeImmutable::createFromPost( $post, 'modified' );
 
 		$this->assertEquals( $datetime, $wp_datetime );
 
 		$post = (object) [ 'post_date_gmt' => 'invalid date' ];
 
-		$this->assertFalse( WpDateTime::createFromPost( $post ) );
-		$this->assertFalse( WpDateTime::createFromPost( 'invalid post' ) );
-		$this->assertFalse( WpDateTime::createFromPost( new \stdClass(), 'invalid_field' ) );
+		$this->assertFalse( WpDateTimeImmutable::createFromPost( $post ) );
+		$this->assertFalse( WpDateTimeImmutable::createFromPost( 'invalid post' ) );
+		$this->assertFalse( WpDateTimeImmutable::createFromPost( new \stdClass(), 'invalid_field' ) );
 	}
 
 	/**
