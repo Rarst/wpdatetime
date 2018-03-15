@@ -11,19 +11,19 @@
 	"authors"     : [
 		{
 			"name"    : "Andrey Savchenko",
-			"email"   : "contact@rarst.net",
-			"homepage": "https://Rarst.net"
+			"homepage": "https://www.Rarst.net/"
 		}
 	],
 	"require": {
 		"php": ">=5.5.10"
 	},
 	"require-dev" : {
-		"brain/monkey": "^2.1"
+		"brain/monkey": "^2.1",
+		"pds/skeleton": "^1.0"
 	},
 	"autoload"    : {
 		"psr-4": {
-			"Rarst\\WordPress\\DateTime\\": "php/"
+			"Rarst\\WordPress\\DateTime\\": "src/"
 		}
 	},
 	"autoload-dev": {
