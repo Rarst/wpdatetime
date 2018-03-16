@@ -90,6 +90,11 @@ trait WpDateTimeTrait {
 		// Fix shorthands bug in date_i18n(), see https://core.trac.wordpress.org/ticket/20973.
 		$format = preg_replace( '/(?<!\\\\)c/', DATE_W3C, $format );
 		$format = preg_replace( '/(?<!\\\\)r/', DATE_RFC2822, $format );
+		// Fix formats for timestamp and Swatch time, see https://core.trac.wordpress.org/ticket/43530.
+		$format = preg_replace( '/(?<!\\\\)U/', $this->getTimestamp(), $format );
+		if ( false !== strpos( $format, 'B' ) ) {
+			$format = preg_replace( '/(?<!\\\\)B/', $this->format( 'B' ), $format );
+		}
 
 		add_filter( 'pre_option_timezone_string', $timezone_filter, 10, 0 );
 		$date_i18n = date_i18n( $format, $this->getTimestamp() + $this->getOffset(), true );

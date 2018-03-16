@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - directory structure to PDS skeleton
 
+### Fixed
+- incorrect timestamp `U` and Swatch time `B` formats when returned by `date_i18n()`
+
 ## 0.2.2 - 2018-02-01
 
 ### Changed

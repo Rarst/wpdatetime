@@ -86,13 +86,19 @@ class WpDateTimeTest extends WpDateTimeTestCase {
 			$this->assertNotEquals( 'r', $format );
 			$this->assertTrue( has_filter( 'pre_option_timezone_string', 'DateTimeZone->getName()' ) );
 
+			$format = preg_replace( '/(?<!\\\\)U/', $wp_timestamp, $format );
+			$format = preg_replace( '/(?<!\\\\)B/', $wp_datetime->setTimestamp( $wp_timestamp )->format( 'B' ), $format );
+
 			return $wp_datetime->setTimestamp( $unix_timestamp )->format( $format );
 		} );
 
-		Filters\expectAdded( 'pre_option_timezone_string' )->times( 5 );
+		Filters\expectAdded( 'pre_option_timezone_string' )->zeroOrMoreTimes();
 
 		$this->assertEquals( $wp_datetime->format( DATE_W3C ), $wp_datetime->formatI18n( 'c' ) );
 		$this->assertEquals( $wp_datetime->format( DATE_RFC2822 ), $wp_datetime->formatI18n( 'r' ) );
+
+		$this->assertEquals( $wp_datetime->format( 'U' ), $wp_datetime->formatI18n( 'U' ) );
+		$this->assertEquals( $wp_datetime->format( 'B' ), $wp_datetime->formatI18n( 'B' ) );
 
 		$this->assertEquals(
 			$wp_datetime->setTimezone( new \DateTimeZone( '+02:00' ) )->format( DATE_W3C ),
