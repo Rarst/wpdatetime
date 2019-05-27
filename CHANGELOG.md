@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - test issue with summer time
+- incorrect conversion for -00:30 time zone
 
 ## 0.3 - 2018-03-16
 

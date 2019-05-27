@@ -21,9 +21,10 @@ class WpDateTimeZone extends \DateTimeZone {
 		}
 
 		$offset  = get_option( 'gmt_offset' );
+		$sign    = $offset < 0 ? '-' : '+';
 		$hours   = (int) $offset;
 		$minutes = abs( ( $offset - (int) $offset ) * 60 );
-		$offset  = sprintf( '%+03d:%02d', $hours, $minutes );
+		$offset  = sprintf( '%s%02d:%02d', $sign, abs( $hours ), $minutes );
 
 		return new static( $offset );
 	}
