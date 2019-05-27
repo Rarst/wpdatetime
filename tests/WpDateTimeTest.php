@@ -100,9 +100,11 @@ class WpDateTimeTest extends WpDateTimeTestCase {
 		$this->assertEquals( $wp_datetime->format( 'U' ), $wp_datetime->formatI18n( 'U' ) );
 		$this->assertEquals( $wp_datetime->format( 'B' ), $wp_datetime->formatI18n( 'B' ) );
 
+		$offset = sprintf( '%+03d:00', $wp_datetime->getOffset() / 3600 );
+
 		$this->assertEquals(
-			$wp_datetime->setTimezone( new \DateTimeZone( '+02:00' ) )->format( DATE_W3C ),
-			$wp_datetime->setTimezone( new \DateTimeZone( '+02:00' ) )->formatI18n( DATE_W3C )
+			$wp_datetime->setTimezone( new \DateTimeZone( $offset ) )->format( DATE_W3C ),
+			$wp_datetime->setTimezone( new \DateTimeZone( $offset ) )->formatI18n( DATE_W3C )
 		);
 
 		$date_format = 'F j, Y';

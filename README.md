@@ -74,7 +74,7 @@ var_dump( WpDateTimeZone::getWpTimezone()->getName() );
 
 ## Tests
 
-Tests use [Brain Monkey](https://brain-wp.github.io/BrainMonkey/) (included in dependencies) and PHPUnit 6 (not included).
+Tests use [Brain Monkey](https://brain-wp.github.io/BrainMonkey/) (included in dependencies) and PHPUnit 7 (not included).
 
 ```bash
 composer install
