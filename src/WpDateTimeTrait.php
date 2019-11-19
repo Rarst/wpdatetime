@@ -25,6 +25,10 @@ trait WpDateTimeTrait {
 	 */
 	public static function createFromPost( $post, $field = 'date' ) {
 
+		if ( function_exists( 'get_post_datetime' ) ) {
+			_deprecated_function( __METHOD__, '5.3', 'get_post_datetime()' );
+		}
+
 		if ( ! in_array( $field, [ 'date', 'modified' ], true ) ) {
 			return false;
 		}
@@ -84,6 +88,10 @@ trait WpDateTimeTrait {
 	 * @return string Formatted date string.
 	 */
 	public function formatI18n( $format ) {
+
+		if ( function_exists( 'wp_date' ) ) {
+			_deprecated_function( __METHOD__, '5.3', 'wp_date()' );
+		}
 
 		$timezone_filter = [ $this->getTimezone(), 'getName' ];
 

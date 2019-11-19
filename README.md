@@ -11,7 +11,17 @@
 WpDateTime is an extension of PHP’s [`DateTime`](http://php.net/manual/en/class.datetime.php) and [`DateTimeZone`](http://php.net/manual/en/class.datetimezone.php) classes for WordPress context.
 
 It makes it easy to instance time objects from WordPress posts and produce localized output with correct format and time zone handling.
- 
+
+## Deprecated
+
+The project is deprecated in favor of native WordPress 5.3+ functions:
+
+- `WpDateTime::createFromPost()` — [`get_post_datetime()`](https://developer.wordpress.org/reference/functions/get_post_datetime/)
+- `WpDateTime->formatI18n()` — [`wp_date()`](https://developer.wordpress.org/reference/functions/wp_date/)
+- `WpDateTimeZone::getWpTimezone()` — [`wp_timezone()`](https://developer.wordpress.org/reference/functions/wp_timezone/)
+
+It will be supported for a period of two WordPress releases, until version 5.5.
+
 ## Installation
 
 Require as [Composer](https://getcomposer.org/) package in your project:

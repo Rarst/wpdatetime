@@ -14,6 +14,10 @@ class WpDateTimeZone extends \DateTimeZone {
 	 */
 	public static function getWpTimezone() {
 
+		if ( function_exists( 'wp_timezone' ) ) {
+			_deprecated_function( __FUNCTION__, '5.3', 'wp_timezone()' );
+		}
+
 		$timezone_string = get_option( 'timezone_string' );
 
 		if ( ! empty( $timezone_string ) ) {

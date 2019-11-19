@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## 0.4 - 2019-11-19
+
+### Added
+- deprecation notices to methods
+
+### Deprecated
+- the project in favor of native WordPress 5.3+ functions
+
 ## 0.3.1 - 2019-05-27
 
 ### Fixed
