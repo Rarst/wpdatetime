@@ -1,26 +1,16 @@
 # WpDateTime — DateTime extension for WordPress
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Rarst/wpdatetime/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Rarst/wpdatetime/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/Rarst/wpdatetime/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Rarst/wpdatetime/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/Rarst/wpdatetime/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Rarst/wpdatetime/?branch=master)
-[![Total Downloads](https://poser.pugx.org/rarst/wpdatetime/downloads)](https://packagist.org/packages/rarst/wpdatetime)
-[![Latest Stable Version](https://img.shields.io/packagist/v/rarst/wpdatetime.svg?label=version)](https://packagist.org/packages/rarst/wpdatetime)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/rarst/wpdatetime.svg)](https://packagist.org/packages/rarst/wpdatetime)
-[![PDS Skeleton](https://img.shields.io/badge/pds-skeleton-blue.svg)](https://github.com/php-pds/skeleton)
-
 WpDateTime is an extension of PHP’s [`DateTime`](http://php.net/manual/en/class.datetime.php) and [`DateTimeZone`](http://php.net/manual/en/class.datetimezone.php) classes for WordPress context.
 
 It makes it easy to instance time objects from WordPress posts and produce localized output with correct format and time zone handling.
 
-## Deprecated
+## Retired
 
-The project is deprecated in favor of native WordPress 5.3+ functions:
+The project is **retired** in favor of native WordPress 5.3+ functions:
 
 - `WpDateTime::createFromPost()` — [`get_post_datetime()`](https://developer.wordpress.org/reference/functions/get_post_datetime/)
 - `WpDateTime->formatI18n()` — [`wp_date()`](https://developer.wordpress.org/reference/functions/wp_date/)
 - `WpDateTimeZone::getWpTimezone()` — [`wp_timezone()`](https://developer.wordpress.org/reference/functions/wp_timezone/)
-
-It will be supported for a period of two WordPress releases, until version 5.5.
 
 ## Installation
 
